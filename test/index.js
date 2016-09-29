@@ -203,3 +203,26 @@ describe('#checkMailType', function () {
     expect(res).to.equal('Email Front-End|Email Back-End|Email Mobile')
   })
 })
+
+describe('#sendDataToForm', function () {
+  it('should return an error message', function (done) {
+    chai.request(Main)
+      .post('/send')
+      .send({
+        'name': 'Teste Generico',
+        'email': 'rafael@fumasa.org',
+        'html': 1,
+        'css': 0,
+        'javascript': 1,
+        'python': 0,
+        'django': 2,
+        'ios': 1,
+        'android': 0
+      })
+      .end(function (err, res) {
+        expect(err).to.be.null
+        expect(res).to.redirect
+        done()
+      })
+  })
+})
