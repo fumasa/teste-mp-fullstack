@@ -205,7 +205,7 @@ describe('#checkMailType', function () {
 })
 
 describe('#sendDataToForm', function () {
-  it('should return an error message', function (done) {
+  it('should take form data, send Email Generico and redirect', function (done) {
     chai.request(Main)
       .post('/send')
       .send({
