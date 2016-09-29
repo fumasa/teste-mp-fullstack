@@ -73,15 +73,18 @@ app.post('/send', function (req, res) {
   } else {
     let split = msgReturn.split('|')
     for (let val in split) {
-      switch (val) {
+      switch (split[val]) {
         case 'Email Front-End':
           SendMail.sendMail({
             'from': 'rafael@fumasa.org',
             'to': req.body.email,
             'subject': 'Obrigado por se candidatar',
             'body': 'Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador Front-End entraremos em contato.'
-          }, function () {
-            res.redirect('/')
+          }, function (err, resp) {
+            if (err) console.log(err)
+            if (split.length === 1) {
+              res.redirect('/')
+            }
           })
           break
         case 'Email Back-End':
@@ -90,17 +93,22 @@ app.post('/send', function (req, res) {
             'to': req.body.email,
             'subject': 'Obrigado por se candidatar',
             'body': 'Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador Back-End entraremos em contato.'
-          }, function () {
-            res.redirect('/')
+          }, function (err, resp) {
+            if (err) console.log(err)
+            if (split.length === 2) {
+              res.redirect('/')
+            }
           })
           break
         case 'Email Mobile':
+          console.log('mobile-')
           SendMail.sendMail({
             'from': 'rafael@fumasa.org',
             'to': req.body.email,
             'subject': 'Obrigado por se candidatar',
             'body': 'Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador Mobile entraremos em contato.'
-          }, function () {
+          }, function (err, resp) {
+            if (err) console.log(err)
             res.redirect('/')
           })
           break
@@ -110,7 +118,8 @@ app.post('/send', function (req, res) {
             'to': req.body.email,
             'subject': 'Obrigado por se candidatar',
             'body': 'Obrigado por se candidatar, assim que tivermos uma vaga disponível para programador entraremos em contato.'
-          }, function () {
+          }, function (err, resp) {
+            if (err) console.log(err)
             res.redirect('/')
           })
           break
