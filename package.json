@@ -3,13 +3,26 @@
   "version": "1.0.0",
   "description": "an test application for Meus Pedidos",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "pretest": "standard",
     "test": "./node_modules/.bin/mocha --reporter=nyan --recursive",
     "start": "node ."
   },
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.3"
+  },
   "author": "Rafael 'fumasa' Giorgetti",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumasa/teste-mp-fullstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fumasa/teste-mp-fullstack/issues"
+  },
+  "homepage": "https://github.com/fumasa/teste-mp-fullstack#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "bootstrap-rating-input": "^0.4.0",
