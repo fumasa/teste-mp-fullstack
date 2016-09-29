@@ -1,0 +1,31 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "description": "an test application for Meus Pedidos",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard",
+    "test": "./node_modules/.bin/mocha --reporter=nyan --recursive",
+    "start": "node ."
+  },
+  "author": "Rafael 'fumasa' Giorgetti",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap-rating-input": "^0.4.0",
+    "bootstrap-sass": "^3.3.7",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "jquery": "^1.12.4",
+    "node-sass-middleware": "^0.9.8",
+    "pug": "^2.0.0-beta6",
+    "sendgrid": "^4.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "cheerio": "^0.22.0",
+    "mocha": "^3.1.0",
+    "standard": "^8.2.0"
+  }
+}

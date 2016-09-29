@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Formulário para Avaliação de Candidatos - Meus Pedidos
+    link(href="/css/index.css", rel="stylesheet")
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="/node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js")
+    script(src="/node_modules/bootstrap-rating-input/build/bootstrap-rating-input.min.js")
+  body
+    .container
+      h1.text-center Bem-Vindo ao Formulário para Avaliação de Candidatos - Meus Pedidos
+      form.form-horizontal(method="post", action="/send")
+        .page-header
+          h2.text-center Dados do Candidato
+          .form-group
+            label.control-label.col-xs-2(for="inputName") Nome
+            .col-xs-9
+              input.name.form-control.top-buffer-sm#inputName(name="name", placeholder="Nome", required, autofocus)
+          .form-group
+            label.control-label.col-xs-2(for="inputEmail") Email
+            .col-xs-9
+              input.email.form-control.top-buffer-sm#inputEmail(name="email", type="email", placeholder="Email", required, autofocus)
+        .page-header 
+          h2.text-center Avalie seu conhecimento de 0 a 10 nos seguintes itens:
+          .form-group
+            label.control-label.col-xs-6(for="inputHtml") HTML
+            .col-xs-6
+              input.html.rating#inputHtml(name="html", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputCss") CSS
+            .col-xs-6
+              input.css.rating#inputCss(name="css", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputJavascript") Javascript
+            .col-xs-6
+              input.javascript.rating#inputJavascript(name="javascript", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputPython") Python
+            .col-xs-6
+              input.python.rating#inputPython(name="python", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputDjango") Django
+            .col-xs-6
+              input.django.rating#inputDjango(name="django", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputIos") Desenvolvimento iOS
+            .col-xs-6
+              input.ios.rating#inputIos(name="ios", type="number", value="0", data-max="10", data-min="1")
+          .form-group
+            label.control-label.col-xs-6(for="inputAndroid") Desenvolvimento Android
+            .col-xs-6
+              input.android.rating#inputAndroid(name="android", type="number", value="0", data-max="10", data-min="1")
+        .container
+          .form-group
+            .col-xs-offset-9.col-xs-2
+              button.btn.btn-primary(type="submit") Enviar
+  

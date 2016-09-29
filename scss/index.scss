@@ -1,0 +1,9 @@
+@import url(//fonts.googleapis.com/css?family=Kreon:400,700,300);
+$font-family-base: 'Kreon', sans-serif;
+$icon-font-path: "/node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap";
+@import "font-awesome";
+
+.rating-input {
+  padding-top: 8px;
+}
